@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خامسه ابتدائى - Mr. Hassan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- Favicons -->
+    <link href="assets/img/logo.png" rel="icon">
+    <link href="assets/img/logo.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --background-color: #0f1b22;
+            --surface-color: #16262f;
+            --default-color: #d7e6ee;
+            --heading-color: #ffffff;
+            --accent-color: #ffd60a;
+            --contrast-color: #ffffff;
+            --nav-color: #ffffff;
+            --nav-hover-color: #ffd60a;
+            --nav-mobile-background-color: #13232c;
+            --nav-dropdown-background-color: #0c171d;
+            --nav-dropdown-color: #e3f2f8;
+            --nav-dropdown-hover-color: #ffd60a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section,
+        .section {
+            padding: 5px;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--background-color);
+            color: var(--default-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+
+
+
+        /* اللوجو في النص */
+        .logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--accent-color);
+        }
+
+
+
+        /* Main Content */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .level-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .level-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--heading-color);
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 10px rgba(255, 214, 10, 0.1);
+        }
+
+        .level-description {
+            font-size: 1.1rem;
+            color: var(--default-color);
+            font-weight: 400;
+        }
+
+        /* Units Section */
+        .units-section {
+            margin-top: 2rem;
+        }
+
+        .units-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .unit-card {
+            background-color: var(--surface-color);
+            border: 1px solid rgba(255, 214, 10, 0.15);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 280px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .unit-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-color);
+            box-shadow: 0 8px 30px rgba(255, 214, 10, 0.15);
+        }
+
+        .unit-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--heading-color);
+            margin-bottom: 1rem;
+        }
+
+        .unit-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .unit-description {
+            font-size: 0.95rem;
+            color: var(--default-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .unit-btn {
+            background-color: var(--accent-color);
+            color: #000;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .unit-btn:hover {
+            background-color: #f5c700;
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(255, 214, 10, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .units-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .level-title {
+                font-size: 3rem;
+            }
+
+            .breadcrumb {
+                justify-content: flex-end;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .units-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+
+            .level-title {
+                font-size: 3.5rem;
+            }
+
+            .unit-card {
+                padding: 2.5rem 2rem;
+            }
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--background-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f5c700;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header" class="header d-flex align-items-center light-background sticky-top">
+        <div class="container position-relative d-flex align-items-center justify-content-between">
+
+            <!-- ☰ زرار الموبايل (يسار) -->
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+
+            <!-- ✅ اللوجو في النص -->
+            <a href="index.html" class="logo-center">
+                <img src="assets/img/logo.png" alt="HE Logo">
+            </a>
+
+            <!-- ✅ السوشيال (يمين) -->
+            <div class="header-social-links">
+                <a href="#" class="youtube"><i class="bi bi-youtube"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-tiktok"></i></a>
+            </div>
+
+            <!-- ✅ القائمة (تظهر في الديسكتوب، وتشتغل في الموبايل لما تفتح) -->
+            <nav id="navmenu" class="navmenu">
+                <ul style="width: 300px; height: 400px;">
+                    <li><a href="index.html" class="active">الرئيسية</a></li>
+
+                    <li class="dropdown">
+                        <a href="index.html#levels"><span>المراحل الدراسية</span> <i
+                                class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="ebtedae.html">المرحلة الابتدائية</a></li>
+
+                            <li>
+                                <a href="e3dade.html"><span>المرحلة الإعدادية</span> </i></a>
+                            </li>
+
+                            <li><a href="thanawe.html"> المرحله الثانويه</a></li>
+                            <li><a href="tases.html"> الكورس التأسيسى</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="index.html#testimonials">اراء الطلاب</a></li>
+
+                    <li><a href="contact.html">تواصل معنا</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- Main Content -->
+        <main>
+
+
+            <!-- Level Header -->
+            <section class="level-header">
+                <h1 class="level-title"> الصف الخامس الابتدائى</h1>
+                <p class="level-description">اختر الوحدة لبدء الدراسة والتعلم</p>
+            </section>
+            <div style="text-align: center;">
+                <a href="assets/pdf/5 ابتدائى.pdf" target="_blank">
+
+                    <button class="unit-btn"> كتاب الصف الخامس الابتدائى</button>
+                </a>
+            </div>
+            <!-- Units Grid -->
+            <section class="units-section">
+                <div class="units-grid">
+                    <!-- Unit 1 -->
+                    <div class="unit-card">
+                        <div class="unit-content">
+                            <h2 class="unit-title">Unit 1</h2>
+                            <p class="unit-description">شرح شامل + مراجعة + أسئلة محلولة</p>
+                        </div>
+                        <button class="unit-btn" onclick="openPopup('unitPopup1')">دخول الوحدة</button>
+                    </div>
+                    <div class="popup" id="unitPopup1">
+                        <div class="popup-content">
+                            <span class="close" onclick="closePopup('unitPopup1')">×</span>
+                            <h3>اختر المحتوى</h3>
+                            <button class="popup-btn">الشرح</button>
+                            <button class="popup-btn">المراجعة</button>
+                            <button onclick="window.open('assets/question/5ebtedaae/unit1 ----- 5.pdf', '_blank')"
+                                class="popup-btn">اسأله محلولة</button>
+                        </div>
+                    </div>
+
+                    <!-- Unit 2 -->
+                    <div class="unit-card">
+                        <div class="unit-content">
+                            <h2 class="unit-title">Unit 2</h2>
+                            <p class="unit-description">شرح شامل + مراجعة + أسئلة محلولة</p>
+                        </div>
+                        <button class="unit-btn" onclick="openPopup('unitPopup2')">دخول الوحدة</button>
+                    </div>
+                    <div class="popup" id="unitPopup2">
+                        <div class="popup-content">
+                            <span class="close" onclick="closePopup('unitPopup2')">×</span>
+                            <h3>اختر المحتوى</h3>
+                            <button class="popup-btn">الشرح</button>
+                            <button class="popup-btn">المراجعة</button>
+                            <button onclick="window.open('assets/question/5ebtedaae/unit2------5.pdf', '_blank')"
+                                class="popup-btn">اسأله محلولة</button>
+                        </div>
+                    </div>
+
+                    <!-- Unit 3 -->
+                    <div class="unit-card">
+                        <div class="unit-content">
+                            <h2 class="unit-title">Unit 3</h2>
+                            <p class="unit-description">شرح شامل + مراجعة + أسئلة محلولة</p>
+                        </div>
+                        <button class="unit-btn" onclick="openPopup('unitPopup3')">دخول الوحدة</button>
+                    </div>
+                    <div class="popup" id="unitPopup3">
+                        <div class="popup-content">
+                            <span class="close" onclick="closePopup('unitPopup3')">×</span>
+                            <h3>اختر المحتوى</h3>
+                            <button class="popup-btn">الشرح</button>
+                            <button class="popup-btn">المراجعة</button>
+                            <button onclick="window.open('assets/question/5ebtedaae/unit3 ----5.pdf', '_blank')"
+                                class="popup-btn">اسأله محلولة</button>
+                        </div>
+                    </div>
+
+                    <!-- Unit 4 -->
+                    <div class="unit-card">
+                        <div class="unit-content">
+                            <h2 class="unit-title">Unit 4</h2>
+                            <p class="unit-description">شرح شامل + مراجعة + أسئلة محلولة</p>
+                        </div>
+                        <button class="unit-btn" onclick="openPopup('unitPopup4')">دخول الوحدة</button>
+                    </div>
+                    <div class="popup" id="unitPopup4">
+                        <div class="popup-content">
+                            <span class="close" onclick="closePopup('unitPopup4')">×</span>
+                            <h3>اختر المحتوى</h3>
+                            <button class="popup-btn">الشرح</button>
+                            <button class="popup-btn">المراجعة</button>
+                            <button onclick="window.open('assets/question/5ebtedaae/unit4-----5.pdf', '_blank')"
+                                class="popup-btn">اسأله محلولة</button>
+                        </div>
+                    </div>
+
+                    <!-- Unit 5 -->
+                    <div class="unit-card">
+                        <div class="unit-content">
+                            <h2 class="unit-title">Unit 5</h2>
+                            <p class="unit-description">شرح شامل + مراجعة + أسئلة محلولة</p>
+                        </div>
+                        <button class="unit-btn" onclick="openPopup('unitPopup5')">دخول الوحدة</button>
+                    </div>
+                    <div class="popup" id="unitPopup5">
+                        <div class="popup-content">
+                            <span class="close" onclick="closePopup('unitPopup5')">×</span>
+                            <h3>اختر المحتوى</h3>
+                            <button class="popup-btn">الشرح</button>
+                            <button class="popup-btn">المراجعة</button>
+                            <button onclick="window.open('assets/question/5ebtedaae/unit5------5.pdf', '_blank')"
+                                class="popup-btn">اسأله محلولة</button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </section>
+        </main>
+
+        <script>
+            // Menu Toggle
+            const menuBtn = document.getElementById('menuBtn');
+            const closeBtn = document.getElementById('closeBtn');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+            const body = document.body;
+
+            menuBtn.addEventListener('click', () => {
+                sidebar.classList.add('active');
+                sidebarOverlay.classList.add('active');
+                body.classList.add('menu-open');
+            });
+
+            closeBtn.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+
+            sidebarOverlay.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+
+            // Dropdown Toggle
+            const levelToggle = document.getElementById('levelToggle');
+            const levelDropdown = document.getElementById('levelDropdown');
+
+            levelToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                levelToggle.classList.toggle('active');
+                levelDropdown.classList.toggle('active');
+            });
+
+            // Close menu when clicking on a link
+            const navLinks = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    sidebar.classList.remove('active');
+                    sidebarOverlay.classList.remove('active');
+                    body.classList.remove('menu-open');
+                });
+            });
+
+
+        </script>
+        <script src="assets/js/main.js"></script>
+        <script>
+            function openPopup(popupId) {
+                document.getElementById(popupId).style.display = "flex";
+            }
+
+            function closePopup(popupId) {
+                document.getElementById(popupId).style.display = "none";
+            }
+        </script>
+</body>
+
+</html>
