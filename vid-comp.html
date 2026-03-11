@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اولى اعدادى - Mr. Hassan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- Favicons -->
+    <link href="assets/img/logo.png" rel="icon">
+    <link href="assets/img/logo.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --background-color: #0f1b22;
+            --surface-color: #16262f;
+            --default-color: #d7e6ee;
+            --heading-color: #ffffff;
+            --accent-color: #ffd60a;
+            --contrast-color: #ffffff;
+            --nav-color: #ffffff;
+            --nav-hover-color: #ffd60a;
+            --nav-mobile-background-color: #13232c;
+            --nav-dropdown-background-color: #0c171d;
+            --nav-dropdown-color: #e3f2f8;
+            --nav-dropdown-hover-color: #ffd60a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section,
+        .section {
+            padding: 5px;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--background-color);
+            color: var(--default-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+
+
+
+        /* اللوجو في النص */
+        .logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--accent-color);
+        }
+
+
+
+        /* Main Content */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .level-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .level-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--heading-color);
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 10px rgba(255, 214, 10, 0.1);
+        }
+
+        .level-description {
+            font-size: 1.1rem;
+            color: var(--default-color);
+            font-weight: 400;
+        }
+
+        /* Units Section */
+        .units-section {
+            margin-top: 2rem;
+        }
+
+        .units-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .unit-card {
+            background-color: var(--surface-color);
+            border: 1px solid rgba(255, 214, 10, 0.15);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 280px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .unit-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-color);
+            box-shadow: 0 8px 30px rgba(255, 214, 10, 0.15);
+        }
+
+        .unit-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--heading-color);
+            margin-bottom: 1rem;
+        }
+
+        .unit-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .unit-description {
+            font-size: 0.95rem;
+            color: var(--default-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .unit-btn {
+            background-color: var(--accent-color);
+            color: #000;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .unit-btn:hover {
+            background-color: #f5c700;
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(255, 214, 10, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .units-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .level-title {
+                font-size: 3rem;
+            }
+
+            .breadcrumb {
+                justify-content: flex-end;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .units-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+
+            .level-title {
+                font-size: 3.5rem;
+            }
+
+            .unit-card {
+                padding: 2.5rem 2rem;
+            }
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--background-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f5c700;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header" class="header d-flex align-items-center light-background sticky-top">
+        <div class="container position-relative d-flex align-items-center justify-content-between">
+
+            <!-- ☰ زرار الموبايل (يسار) -->
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+
+            <!-- ✅ اللوجو في النص -->
+            <a href="index.html" class="logo-center">
+                <img src="assets/img/logo.png" alt="HE Logo">
+            </a>
+
+            <!-- ✅ السوشيال (يمين) -->
+            <div class="header-social-links">
+                <a href="http://www.youtube.com/@Mr.Hassan-Mousa" class="youtube"><i class="bi bi-youtube"></i></a>
+                <a href="https://www.facebook.com/share/17i7bq6Qap/" class="linkedin"><i class="bi bi-facebook"></i></a>
+
+                <a href="https://www.tiktok.com/@mr..hassan.mousa?is_from_webapp=1&sender_device=pc" class="linkedin"><i
+                        class="bi bi-tiktok"></i></a>
+            </div>
+
+            <!-- ✅ القائمة (تظهر في الديسكتوب، وتشتغل في الموبايل لما تفتح) -->
+            <nav id="navmenu" class="navmenu">
+                <ul style="width: 300px; height: 400px;">
+                    <li><a href="index.html" class="active">الرئيسية</a></li>
+
+                    <li class="dropdown">
+                        <a href="index.html#levels"><span>المراحل الدراسية</span> <i
+                                class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="ebtedae.html">المرحلة الابتدائية</a></li>
+
+                            <li>
+                                <a href="e3dade.html"><span>المرحلة الإعدادية</span> </i></a>
+                            </li>
+
+                            <li><a href="thanawe.html"> المرحله الثانويه</a></li>
+                            <li><a href="tases.html"> الكورس التأسيسى</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="index.html#testimonials"> اراء الطلاب</a></li>
+
+                    <li><a href="contact.html">تواصل معنا</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- Main Content -->
+        <main>
+
+
+            <!-- Level Header -->
+            <section class="level-header">
+                <h1 class="level-title"> اعرف الفرق ومتتلغبطش تانى</h1>
+            </section>
+            <!-- Units Grid -->
+            <section class="units-section">
+                <div class="units-grid">
+                    <!-- الفرق بين For و Since -->
+                    <div class="unit-card">
+                        <div class="unit-content">
+                            <h2 class="unit-title">  For و Since</h2>
+                        </div>
+                        <button class="unit-btn" onclick="window.open('https://youtu.be/uJvqglNk-RQ', '_blank')"> مشاهده
+                            الفيديو</button>
+                    </div>
+
+
+
+                    <!-- الفرق بين Many و Much -->
+                    <div class="unit-card">
+                        <div class="unit-content">
+                            <h2 class="unit-title">  Many و Much</h2>
+                        </div>
+                        <button class="unit-btn" onclick="window.open('https://youtu.be/1dMPL7tzDc4', '_blank')"> مشاهده
+                            الفيديو</button>
+                    </div>
+
+
+                    <!--  الفرق بين used to و be used to و get used to -->
+                    <div class="unit-card">
+                        <div class="unit-content">
+                            <h2 class="unit-title">  used to و be used to و get used to</h2>
+                        </div>
+                        <button class="unit-btn" onclick="window.open('https://youtu.be/h5xKarKO-Ms', '_blank')"> مشاهده
+                            الفيديو</button>
+                    </div>
+
+
+
+
+                    <!-- في الفيديو ده هتتعلم الفرق بين Comparatives و Superlatives -->
+                    <div class="unit-card">
+                        <div class="unit-content">
+                            <h2 class="unit-title">  Comparatives و Superlatives</h2>
+                        </div>
+                        <button class="unit-btn" onclick="window.open('https://youtu.be/xBfWGYaQ2_E', '_blank')"> مشاهده
+                            الفيديو</button>
+                    </div>
+
+
+
+
+
+                    <!-- في الفيديو ده هتتعلم الفرق بين Comparatives و Superlatives -->
+                    <div class="unit-card">
+                        <div class="unit-content">
+                            <h2 class="unit-title">  Talk و Speak</h2>
+                        </div>
+                        <button class="unit-btn" onclick="window.open('', '_blank')"> يتم تجهيز
+                            الفيديو</button>
+                    </div>
+
+
+
+
+                </div>
+            </section>
+        </main>
+
+        <script>
+            // Menu Toggle
+            const menuBtn = document.getElementById('menuBtn');
+            const closeBtn = document.getElementById('closeBtn');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+            const body = document.body;
+
+            menuBtn.addEventListener('click', () => {
+                sidebar.classList.add('active');
+                sidebarOverlay.classList.add('active');
+                body.classList.add('menu-open');
+            });
+
+            closeBtn.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+
+            sidebarOverlay.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+
+            // Dropdown Toggle
+            const levelToggle = document.getElementById('levelToggle');
+            const levelDropdown = document.getElementById('levelDropdown');
+
+            levelToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                levelToggle.classList.toggle('active');
+                levelDropdown.classList.toggle('active');
+            });
+
+            // Close menu when clicking on a link
+            const navLinks = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    sidebar.classList.remove('active');
+                    sidebarOverlay.classList.remove('active');
+                    body.classList.remove('menu-open');
+                });
+            });
+
+
+        </script>
+        <script src="assets/js/main.js"></script>
+        <script>
+            function openPopup(popupId) {
+                document.getElementById(popupId).style.display = "flex";
+            }
+
+            function closePopup(popupId) {
+                document.getElementById(popupId).style.display = "none";
+            }
+        </script>
+
+</body>
+
+
+</html>
