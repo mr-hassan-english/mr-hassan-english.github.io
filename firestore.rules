@@ -1,0 +1,21 @@
+rules_version = '2';
+
+// =====================================================================
+//  قواعد الأمان — أي حد يقدر يقرأ (عشان الموقع يعرض الفيديوهات)
+//  لكن الكتابة (إضافة/تعديل/حذف) للأدمن بس.
+//  غيّر الإيميل اللي تحت لإيميلك اللي هتدخل بيه لوحة التحكم.
+// =====================================================================
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAdmin() {
+      return request.auth != null
+          && request.auth.token.email == 'PUT_YOUR_ADMIN_EMAIL_HERE';
+    }
+
+    match /{collection}/{docId} {
+      allow read: if collection in ['stages', 'units', 'series', 'videos'];
+      allow write: if isAdmin() && collection in ['stages', 'units', 'series', 'videos'];
+    }
+  }
+}
