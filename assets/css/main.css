@@ -1,4 +1,3 @@
-
 :root {
   --default-font: "Cairo", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
 
@@ -270,58 +269,43 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Navigation Menu  (القايمة اللي بتفتح من زرار ☰ - في كل المقاسات)
+# Navigation Menu  (قايمة منسدلة تحت زرار ☰ - في كل المقاسات)
 --------------------------------------------------------------*/
 .navmenu {
-  position: fixed;
-  inset: 0;
-  z-index: 9998;
-  background: rgba(5, 10, 14, 0.6);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+  position: static; /* عشان القايمة تتثبت نسبةً للـ container مش للشاشة */
 }
 
-/* اللوحة الجانبية (من اليمين لأن الصفحة RTL) */
 .navmenu > ul {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: min(86vw, 340px);
+  top: calc(100% + 14px);
+  right: 15px;
+  z-index: 9998;
+  width: min(calc(100vw - 30px), 320px);
+  max-height: calc(100vh - 130px);
   margin: 0;
-  padding: 84px 14px 24px;
+  padding: 8px;
   list-style: none;
   overflow-y: auto;
   background: var(--nav-mobile-background-color);
-  border-left: 1px solid rgba(255, 255, 255, 0.08);
-  transform: translateX(100%);
-  transition: transform 0.3s ease;
-}
-
-/* لما القايمة تتفتح */
-.mobile-nav-active {
-  overflow: hidden;
-}
-
-.mobile-nav-active .navmenu {
-  opacity: 1;
-  visibility: visible;
-  transition-delay: 0s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s;
 }
 
 .mobile-nav-active .navmenu > ul {
+  opacity: 1;
+  visibility: visible;
   transform: none;
+  transition-delay: 0s;
 }
 
-/* زرار ☰ يتحول لـ ✕ ويفضل فوق اللوحة */
+/* زرار ☰ يبقى ✕ بنفس مكانه */
 .mobile-nav-active .mobile-nav-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  transform: none;
-  font-size: 30px;
-  color: #fff;
+  color: var(--accent-color);
 }
 
 /* العناصر */
@@ -337,9 +321,9 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 12px;
+  padding: 12px 14px;
   font-family: var(--nav-font);
-  font-size: 17px;
+  font-size: 16.5px;
   font-weight: 600;
   color: var(--nav-dropdown-color);
   text-decoration: none;
@@ -352,6 +336,10 @@ h6 {
   color: var(--accent-color);
 }
 
+.navmenu > ul > li > a:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
 .navmenu a:focus-visible,
 .mobile-nav-toggle:focus-visible {
   outline: 2px solid var(--accent-color);
@@ -362,9 +350,9 @@ h6 {
 .navmenu .toggle-dropdown {
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
-  font-size: 13px;
+  width: 32px;
+  height: 32px;
+  font-size: 12px;
   line-height: 1;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.06);
@@ -381,8 +369,8 @@ h6 {
 .navmenu .dropdown > ul {
   display: none;
   list-style: none;
-  margin: 0 12px 10px 0;
-  padding: 0 10px 0 0;
+  margin: 0 14px 8px 0;
+  padding: 0 8px 0 0;
   border-right: 2px solid color-mix(in srgb, var(--accent-color), transparent 55%);
 }
 
@@ -391,8 +379,8 @@ h6 {
 }
 
 .navmenu .dropdown ul a {
-  padding: 11px 12px;
-  font-size: 15.5px;
+  padding: 10px 12px;
+  font-size: 15px;
   font-weight: 500;
   color: rgba(227, 242, 248, 0.8);
 }
@@ -402,7 +390,7 @@ h6 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .navmenu, .navmenu > ul, .navmenu a, .navmenu .toggle-dropdown { transition: none !important; }
+  .navmenu > ul, .navmenu a, .navmenu .toggle-dropdown { transition: none !important; }
 }
 
 /*--------------------------------------------------------------
